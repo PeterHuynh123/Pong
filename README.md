@@ -15,4 +15,5 @@ py game.py
 
 <img src="screenshot/gameplay1.png" width="80%"></img>
 
+<a href="https://github.com/hoangdesu">@hoangdesu</a>
 
