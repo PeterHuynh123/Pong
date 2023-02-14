@@ -1,11 +1,18 @@
 # Pong
-My version of pong
+
+This is my take on Pong written in pygame
+
+## How to run the project
+
+require Python3
+
+```
+pip install pygame
+py game.py
+```
+
+## Demo
+
+<img src="screenshot/gameplay1.png" width="80%"></img>
 
 
-
-TODO:
-    - Different game screen: Menu -> gameplay -> victory screen -> Menu...
-    - Speed up the ball after every touch(1%)
-    - Sound
-    - Serve direction(lose side serve)
-    - Fix the paddle speed

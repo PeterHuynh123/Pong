@@ -11,9 +11,9 @@ class Settings():
         self.paddle2_x_offset = self.screen_width-60-self.paddle_width//2
         self.paddle_speed = 5
         
-        self.ball_radius = 8
+        self.ball_radius = 10
         self.ball_spawn_x = self.screen_width//2 - 5
         self.ball_spawn_y = self.screen_height//2 - 5
-        self.ball_speed = 0.5
+        self.ball_speed = 0.7
 
         self.score_offset = 30
