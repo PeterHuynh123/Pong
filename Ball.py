@@ -9,6 +9,7 @@ class Ball:
         self.diameter = self.radius*2
         self.screen = screen
         self.speed = settings.ball_speed
+        self.speed_factor = 1.05
         self.direction_x = 0
         self.direction_y = 0
         self.centerx = screen.get_width()//2-self.radius
