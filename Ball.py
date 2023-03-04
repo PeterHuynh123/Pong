@@ -19,8 +19,10 @@ class Ball:
         
     def get_direction(self):
         while self.direction_x == 0 or self.direction_y == 0:
-            self.direction_x = random.randint(-4,4)/3
-            self.direction_y = random.randint(-4,4)/3
+            self.direction_x = random.choice([-1, 1])
+            self.direction_y = 0
+            self.direction_y += random.uniform(-0.5, 0.5)
+        # Add some randomness to the initial direction of the ball
         self.speed = 2
         
     def update(self, ball_is_moving):

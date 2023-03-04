@@ -14,7 +14,7 @@ class Settings():
         self.ball_radius = 10
         self.ball_spawn_x = self.screen_width//2 - 5
         self.ball_spawn_y = self.screen_height//2 - 5
-        self.ball_speed = 0.7
+        self.ball_speed = 2
         
 
         self.score_offset = 30

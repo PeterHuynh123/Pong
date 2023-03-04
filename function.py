@@ -1,6 +1,7 @@
 import random
 import pygame as pg
 import sys
+import math
 
 def check_input_events(screen, paddle1, paddle2, settings, ball_is_moving, ball):
     for event in pg.event.get():
@@ -75,37 +76,48 @@ def ball_collision_check_wall(ball, settings, score, sound):
         
 
 def ball_collision_check_paddle(ball, paddle1, paddle2, sound):
-    if (ball.y < paddle1.y + paddle1.height) and (ball.y + ball.radius > paddle1.y) and (ball.x < paddle1.x + paddle1.width) and (ball.x + ball.radius > paddle1.x):
-        ball.direction_y = -ball.direction_y
-        ball.speed = ball.speed*ball.speed_factor
-        sound.collision_sound_list[random.randint(0, 3)].play()
-        # print("collision detected")
-        # ball.direction_y += random.randint(-45, 45)//300
+    # if (ball.y < paddle1.y + paddle1.height) and (ball.y + ball.radius > paddle1.y) and (ball.x < paddle1.x + paddle1.width) and (ball.x + ball.radius > paddle1.x):
+    #     ball.direction_y = -ball.direction_y
+    #     ball.speed = ball.speed*ball.speed_factor
+    #     sound.collision_sound_list[random.randint(0, 3)].play()
+    #     # print("collision detected")
+    #     # ball.direction_y += random.randint(-45, 45)//300
     
-    elif (ball.y < paddle2.y + paddle2.height) and (ball.y + ball.radius > paddle2.y) and (ball.x < paddle2.x + paddle2.width) and (ball.x + ball.radius > paddle2.x):
-        # print("collision detected")
-        ball.direction_y = -ball.direction_y
+    # elif (ball.y < paddle2.y + paddle2.height) and (ball.y + ball.radius > paddle2.y) and (ball.x < paddle2.x + paddle2.width) and (ball.x + ball.radius > paddle2.x):
+    #     # print("collision detected")
+    #     ball.direction_y = -ball.direction_y
         
-        ball.speed = ball.speed*ball.speed_factor
-        sound.collision_sound_list[random.randint(0, 3)].play()
+    #     ball.speed = ball.speed*ball.speed_factor
+    #     sound.collision_sound_list[random.randint(0, 3)].play()
     
-    if (ball.x < paddle1.x + paddle1.width) and (ball.x + ball.radius > paddle1.x) and (ball.y < paddle1.y + paddle1.height) and (ball.y + ball.radius > paddle1.y):
+    # if (ball.x < paddle1.x + paddle1.width) and (ball.x + ball.radius > paddle1.x) and (ball.y < paddle1.y + paddle1.height) and (ball.y + ball.radius > paddle1.y):
+    #     ball.direction_x = -ball.direction_x
+    #     ball.direction_y = -ball.direction_y
+        
+    #     ball.speed = ball.speed*ball.speed_factor
+    #     sound.collision_sound_list[random.randint(0, 3)].play()
+    #     # print("collision detected")
+    #     # ball.direction_y += random.randint(-45, 45)//300
+    
+    # elif (ball.x < paddle2.x + paddle2.width) and (ball.x + ball.radius > paddle2.x) and (ball.y < paddle2.y + paddle2.height) and (ball.y + ball.radius > paddle2.y):
+    #     # print("collision detected")
+    #     ball.direction_x = -ball.direction_x
+    #     ball.direction_y = -ball.direction_y
+        
+        
+    #     ball.speed = ball.speed*ball.speed_factor
+    #     sound.collision_sound_list[random.randint(0, 3)].play()
+    
+    if ball.direction_x < 0 and ball.x - ball.radius <= paddle1.x + paddle1.width and ball.y >= paddle1.y and ball.y <= paddle1.y + paddle1.height:
+    # Handle the collision with paddle 1
+    # Handle the collision with paddle 1
         ball.direction_x = -ball.direction_x
-        ball.direction_y = -ball.direction_y
-        
-        ball.speed = ball.speed*ball.speed_factor
-        sound.collision_sound_list[random.randint(0, 3)].play()
-        # print("collision detected")
-        # ball.direction_y += random.randint(-45, 45)//300
-    
-    elif (ball.x < paddle2.x + paddle2.width) and (ball.x + ball.radius > paddle2.x) and (ball.y < paddle2.y + paddle2.height) and (ball.y + ball.radius > paddle2.y):
-        # print("collision detected")
+        # ball.direction_y = -ball.direction_y
+    elif ball.direction_x > 0 and ball.x + ball.radius >= paddle2.x and ball.y >= paddle2.y and ball.y <= paddle2.y + paddle2.height:
+    # Handle the collision with paddle 2
         ball.direction_x = -ball.direction_x
-        ball.direction_y = -ball.direction_y
+        # ball.direction_y = -ball.direction_y
         
-        
-        ball.speed = ball.speed*ball.speed_factor
-        sound.collision_sound_list[random.randint(0, 3)].play()
         
     
 # def ball_collision_check_paddle(ball, paddle1, paddle2, sound):

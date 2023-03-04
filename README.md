@@ -4,7 +4,7 @@ This is my take on Pong written in pygame
 
 ## How to run the project
 
-require Python3
+require Python3, pygame library
 
 ```
 pip install pygame
@@ -15,5 +15,5 @@ py game.py
 
 <img src="screenshot/gameplay1.png" width="80%"></img>
 
-<a href="https://github.com/hoangdesu">@hoangdesu</a>
+<a href="https://github.com/hoangdesu">Instructor: @hoangdesu</a>
 
